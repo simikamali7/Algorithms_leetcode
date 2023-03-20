@@ -35,8 +35,8 @@ var romanToInt = function(s) {
     var counter = 0;
 
     for(let i =0; i < stringArray.length(); i++){
-        if (stringArray[i] == 'I',)
-            counter += ;
+        if (stringArray[i] == 'I') 
+            counter += 0;
     }
 
     return counter;    
