@@ -114,11 +114,11 @@ class MaxHeap:
             self.arr[self.parent(i)] = temp
             i = self.parent(i)
  
-    # Returns the maximum key
-    # (key at root) from max heap.
+    # Returns the maximum key (key at root) from max heap.
     def getMax(self):
         return self.arr[0]
  
+    # returns the size of the heap
     def curSize(self):
         return self.heapSize
  
@@ -130,16 +130,16 @@ class MaxHeap:
         self.increaseKey(i, float("inf"))
         self.removeMax()
  
-    # Inserts a new key 'x' in the Max Heap.
+    # Inserts a new key/element 'x' in the Max Heap.
     def insertKey(self, x):
-        # To check whether the key
-        # can be inserted or not.
+        # To check whether the key can be inserted or not.
         if self.heapSize == self.maxSize:
             print("\nOverflow: Could not insertKey\n")
             return
  
-        # The new key is initially
-        # inserted at the end.
+        # The new key is initially inserted at the end.
+
+        # increase size property, 
         self.heapSize += 1
         i = self.heapSize - 1
         self.arr[i] = x
@@ -191,3 +191,23 @@ if __name__ == '__main__':
     h.insertKey(15)
     h.insertKey(5)
     print("The current size of the heap is " + str(h.curSize()))
+
+
+
+
+# Applications of Heap Data Structure:
+    # Priority Queues: Priority queues can be efficiently implemented using Binary Heap because it supports insert(), delete() and extractmax(), decreaseKey() operations in O(log N) time. 
+    # Binomial Heap and Fibonacci Heap are variations of Binary Heap. These variations perform union also in O(log N) time which is an O(N) operation in Binary Heap.
+    # Order statistics: The Heap data structure can be used to efficiently find the kth smallest (or largest) element in an array. You can see this gfg article to know more about the kth smallest or largest element.
+
+# Advantages of Heaps:
+    # Fast access to maximum/minimum element (O(1))
+    # Efficient Insertion and Deletion operations (O(log n))
+    # Flexible size
+    # Can be efficiently implemented as an array
+    # Suitable for real-time applications
+
+# Disadvantages of Heaps:
+    # Not suitable for searching for an element other than maximum/minimum (O(n) in worst case)
+    # Extra memory overhead to maintain heap structure
+    # Slower than other data structures like arrays and linked lists for non-priority queue operations.
